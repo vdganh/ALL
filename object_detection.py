@@ -49,7 +49,7 @@ if userInput == username:
             print("IP KOMPUTER:"+IPAddr)
         elif b == '3' :
                 import json
-                x = open('D:\CODINGAN\PYTHON\data.json')
+                x = open('data.json')
                 data = json.load(x)
 
                 print('''
