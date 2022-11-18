@@ -13,6 +13,7 @@ if userInput == username:
         print("[2.] IP-HOST")
         print("[3.] CHAT-BOT")
         print("[4.] Kirim-Pesan-Whatsapp")
+        print("""UNTUK MENGUBAH WAKTU PADA OPSI NO 4, KALIAN BISA KETIKKAN "nano namafile.py" TERUS SCROLL KEBWAH DAN CARI "elif b == 4" DISITU SUDAH SAYA BERI KETERANGAN""")
         b = input('PILIH ANGKA DIATAS : ')
         if b == '1' :
             abjad = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -49,7 +50,7 @@ if userInput == username:
             print("IP KOMPUTER:"+IPAddr)
         elif b == '3' :
                 import json
-                x = open('data.json')
+                x = open('D:\CODINGAN\PYTHON\data.json')
                 data = json.load(x)
 
                 print('''
@@ -88,19 +89,16 @@ if userInput == username:
                     #Pesan Whatsapp
         elif b == "4":
             import pywhatkit
-            nomer = input('MASUKKAN NOMER : ' )    
-            waktu = input('MASUKKAN WAKTU : ')
-            print('''CATATATAN PENULISAN WAKTU :( 22,12)
-                     PENJELASN : 22 ADALAH JAM DAN 12 ADALAH MENIT''') 
+            x = ("MASUKKAN NOMER CONTOH +62XXXXXX: ")
+            y = ("MASUKKAN TEKS YANG INGIN DIKIRIMKAN : ")
             try:
-                # pywhatkit.sendwhatmsg("no hp yang ingin kamu kirim pesannya", "pesannya apa", JAM, Menit)
-                # mengirimkan pesan ke no +628xxxxxxx, pesannya adalah hello, jam 19 : 05
-                pywhatkit.sendwhatmsg(nomer, "hello", waktu)
-                print("success")
+                pywhatkit.sendwhatmsg(input(x), input(y), 7, 00) #UBAH NOMOR 7 UNTUK MENYESUAIKAN JAM, DAN 00 UNTUK MENIT
+                print("PENGIRIMAN BERHASIL")
             except:
-                print("gagal")
-
+                print("PENGIRIMAM GAGAL")
         else :
             print('PILIH INPUT YANG BENAR')
+    else:
+        print("USERNAME & PASSWORD SALAH!")
 else:
     print("USERNAME & PASSWORD SALAH!")
